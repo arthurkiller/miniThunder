@@ -1,7 +1,21 @@
-#include<iostream>
-#include<sys/socket.h>
-#include<arpa/inet.h>
-#include<sys/epoll.h>
+#include <iostream>
+//#include<sys/socket.h>
+//#include<arpa/inet.h>
+//#include<sys/epoll.h>
+//#include<netinet/in.h>
+
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/epoll.h>
+#include <time.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 // connect_server request to connect server with give address, return socket fd
 int connect_server(std::string server);
