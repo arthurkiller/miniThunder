@@ -2,8 +2,8 @@
 
 int epoll_fd;
 
-static int connect_server(std::string server, int port){
-    auto socketfd=socket(AF_INET,SOCK_STREAM,0);
+int connect_server(std::string server, int port){
+    auto socketfd = socket(AF_INET,SOCK_STREAM,0);
     struct sockaddr_in servaddr;
 
     servaddr.sin_family=AF_INET;
@@ -21,7 +21,7 @@ static int connect_server(std::string server, int port){
 };
 
 
-static int handle_event(int file_fd,struct epoll_event *events){
+int handle_event(int file_fd,struct epoll_event *events){
     // get the fired fd
     // copy all into the file_fd
 
@@ -29,7 +29,7 @@ static int handle_event(int file_fd,struct epoll_event *events){
 };
 
 
-static int copy_all(int src, int dst) {
+int copy_all(int src, int dst) {
     // make a buffer
     // read from src into buffer till EOF or EAGAIN
     // write into dst till error
